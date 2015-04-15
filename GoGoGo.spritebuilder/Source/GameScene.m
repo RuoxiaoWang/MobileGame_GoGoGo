@@ -43,11 +43,34 @@
 // Move the player to the touch location
 -(void) touchBegan:(CCTouch *)touch withEvent:(UIEvent *)event
 {
+    // Stop the existing action with the same tag before running the new one
     [_playerNode stopActionByTag:1];
+    //  Define the touch range
     CGPoint pos = [touch locationInNode:self];
-    CCAction* move = [CCActionMoveTo actionWithDuration:20.2 position:pos];
+    //Moving the player smoothly with a move action
+    CCAction* move = [CCActionMoveTo actionWithDuration:1.2 position:pos];
     move.tag = 1;
     [_playerNode runAction:move];
+}
+
+-(void) update:(CCTime)delta
+{
+    // Update scroll node position to player node, with offset to center player in the view
+    [self scrollToTarget:_playerNode];
+}
+
+-(void) scrollToTarget:(CCNode*)target
+{
+    // Assign the size of the view to viewSize
+    CGSize viewSize = [CCDirector sharedDirector].viewSize;
+    // The center point of the view is calculated and assigned to viewCenter
+    CGPoint viewCenter = CGPointMake(viewSize.width / 2.0, viewSize.height / 2.0);
+    // Keeps the target node centered in the view
+    CGPoint viewPos = ccpSub(target.positionInPoints, viewCenter);
+    CGSize screenSize = self.contentSizeInPoints;
+    viewPos.x = MAX(0.0, MIN(viewPos.x, screenSize.width - viewSize.width));
+    viewPos.y = MAX(0.0, MIN(viewPos.y, screenSize.height - viewSize.height));
+    self.positionInPoints = ccpNeg(viewPos);
 }
 
 @end

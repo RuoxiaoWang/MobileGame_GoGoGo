@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>4</integer>
+	<integer>6</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,15 +41,15 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>2</integer>
+				<integer>5</integer>
 				<key>baseClass</key>
-				<string>CCNodeGradient</string>
+				<string>CCBFile</string>
 				<key>children</key>
 				<array/>
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCNodeGradient</string>
+				<string>background</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -62,7 +62,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string></string>
+						<string>background</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -76,30 +76,6 @@
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>contentSize</string>
-						<key>type</key>
-						<string>Size</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<integer>2</integer>
-							<integer>2</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>anchorPoint</string>
-						<key>type</key>
-						<string>Point</string>
-						<key>value</key>
-						<array>
-							<real>0.0</real>
-							<real>0.0</real>
 						</array>
 					</dict>
 					<dict>
@@ -117,46 +93,17 @@
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>startColor</string>
+						<string>ccbFile</string>
 						<key>type</key>
-						<string>Color3</string>
+						<string>CCBFile</string>
 						<key>value</key>
-						<array>
-							<real>0.20999999344348907</real>
-							<real>0.64999997615814209</real>
-							<real>0.87000000476837158</real>
-							<real>1</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>endColor</string>
-						<key>type</key>
-						<string>Color3</string>
-						<key>value</key>
-						<array>
-							<real>0.12999999523162842</real>
-							<real>0.5</real>
-							<real>0.80000001192092896</real>
-							<real>1</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>vector</string>
-						<key>type</key>
-						<string>Point</string>
-						<key>value</key>
-						<array>
-							<real>0.0</real>
-							<real>-1</real>
-						</array>
+						<string>Background/Background.ccb</string>
 					</dict>
 				</array>
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>1</integer>
+				<integer>3</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -186,8 +133,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>139.99993896484375</real>
-							<real>82</real>
+							<real>150.01101684570312</real>
+							<real>89.681221008300781</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -269,7 +216,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Change Scene</string>
+							<string>Change Screen</string>
 							<false/>
 						</array>
 					</dict>
@@ -479,10 +426,12 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>3</integer>
+				<integer>4</integer>
 				<key>baseClass</key>
 				<string>CCBFile</string>
 				<key>children</key>
@@ -490,7 +439,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCBFile</string>
+				<string>player</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -512,8 +461,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>139.99993896484375</real>
-							<real>171.45106506347656</real>
+							<real>76.907325744628906</real>
+							<real>154.012451171875</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -541,8 +490,6 @@
 						<string>Prefabs/Player.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -584,8 +531,8 @@
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>4000</real>
-					<real>500</real>
+					<real>1920</real>
+					<real>1080</real>
 					<integer>0</integer>
 					<integer>0</integer>
 				</array>
@@ -626,13 +573,13 @@
 			<key>ext</key>
 			<string>phone</string>
 			<key>height</key>
-			<integer>500</integer>
+			<integer>1080</integer>
 			<key>name</key>
 			<string>Phone</string>
 			<key>scale</key>
 			<real>1</real>
 			<key>width</key>
-			<integer>4000</integer>
+			<integer>1920</integer>
 		</dict>
 		<dict>
 			<key>centeredOrigin</key>
@@ -640,13 +587,13 @@
 			<key>ext</key>
 			<string>tablet phonehd</string>
 			<key>height</key>
-			<integer>500</integer>
+			<integer>1080</integer>
 			<key>name</key>
 			<string>Tablet</string>
 			<key>scale</key>
 			<real>2</real>
 			<key>width</key>
-			<integer>4000</integer>
+			<integer>1920</integer>
 		</dict>
 	</array>
 	<key>sequences</key>
