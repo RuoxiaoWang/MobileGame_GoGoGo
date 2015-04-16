@@ -79,16 +79,20 @@
 			<true/>
 		</dict>
 		<key>BackGroundAssets</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>BackGroundAssets/background.png</key>
 		<dict>
 			<key>format_android</key>
 			<integer>1</integer>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>BackGroundAssets/mainpage.png</key>
+		<dict>
 			<key>isDirty</key>
 			<true/>
+			<key>scaleFrom</key>
+			<integer>2</integer>
 		</dict>
 		<key>GoGoGoAssets</key>
 		<dict>
