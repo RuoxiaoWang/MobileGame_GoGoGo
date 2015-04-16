@@ -1,13 +1,13 @@
 //
-//  GameScene.h
+//  Container.h
 //  GoGoGo
 //
-//  Created by longma on 4/15/15.
+//  Created by longma on 4/16/15.
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
 #import "CCNode.h"
 
-@interface GameScene : CCNode
+@interface Container : CCNode
 
 @end

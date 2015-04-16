@@ -1,16 +1,18 @@
 //
-//  GameScene.m
+//  Container.m
 //  GoGoGo
 //
-//  Created by longma on 4/15/15.
+//  Created by longma on 4/16/15.
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
-#import "GameScene.h"
+#import "Container.h"
 
-@implementation GameScene
+@implementation Container
+
 // variable declarations (ivars)
 {
+    CCNode* _levelNode;
     CCPhysicsNode* _physicsNode;
     CCNode* _playerNode;
     CCNode* _backgroundNode;
@@ -29,21 +31,13 @@
     [self loadGame];
 }
 
--(void) exitButtonPressed
-{
-    NSLog(@"Get me outa here!");
-    CCScene* scene = [CCBReader loadAsScene:@"MainScene"];
-    CCTransition* transition = [CCTransition transitionFadeWithDuration:1.5];
-    [[CCDirector sharedDirector] presentScene:scene withTransition:transition];
-}
-
 // Assigning physics, background, and player node in loadLevelNamed
 -(void) loadGame
 {
     
-    _physicsNode = (CCPhysicsNode*)[self getChildByName:@"physics" recursively:NO];
+    _physicsNode = (CCPhysicsNode*)[_levelNode getChildByName:@"physics" recursively:NO];
     // get the current level's player in the scene by searching for it recursively
-    _backgroundNode = [self getChildByName:@"background" recursively:NO];
+    _backgroundNode = [_levelNode getChildByName:@"background" recursively:NO];
     _playerNode = [_physicsNode getChildByName:@"player" recursively:YES];
 }
 
@@ -51,7 +45,7 @@
 -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     [_playerNode stopActionByTag:1];
-    CGPoint pos = [touch locationInNode:self];
+    CGPoint pos = [touch locationInNode:_levelNode];
     CCAction* move = [CCActionMoveTo actionWithDuration:1.2 position:pos];
     move.tag = 1;
     [_playerNode runAction:move];
@@ -76,11 +70,11 @@
     CGPoint viewCenter = CGPointMake(viewSize.width / 2.0, viewSize.height / 2.0);
     // Keeps the target node centered in the view
     CGPoint viewPos = ccpSub(target.positionInPoints, viewCenter);
-    CGSize screenSize = self.contentSizeInPoints;
+    CGSize screenSize = _levelNode.contentSizeInPoints;
     viewPos.x = MAX(0.0, MIN(viewPos.x, screenSize.width - viewSize.width));
     viewPos.y = MAX(0.0, MIN(viewPos.y, screenSize.height - viewSize.height));
     // We should get the reference to the _physicsNode first because it’s being used to search for the player
-    self.positionInPoints = ccpNeg(viewPos);
+    _levelNode.positionInPoints = ccpNeg(viewPos);
     
 }
 
