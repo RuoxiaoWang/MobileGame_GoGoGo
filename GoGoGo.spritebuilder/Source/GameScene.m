@@ -11,15 +11,14 @@
 @implementation GameScene
 // variable declarations (ivars)
 {
-    __weak CCPhysicsNode* _physicsNode;
-    __weak CCNode* _playerNode;
-    __weak CCNode* _backgroundNode;
+    CCPhysicsNode* _physicsNode;
+    CCNode* _playerNode;
+    CCNode* _backgroundNode;
+    CCLabelTTF *_scoreLabel;
+    BOOL _jumped;
     
-    // physics
-    CGFloat _playerNudgeRightVelocity;
-    CGFloat _playerNudgeUpVelocity;
-    CGFloat _playerMaxVelocity;
-    BOOL _acceleratePlayer;
+    int score;
+    
 }
 
 -(void) didLoadFromCCB
@@ -67,30 +66,6 @@
     // Update scroll node position to player node, with offset to center player in the view
     [self scrollToTarget:_playerNode];
 }
-
-//// Moving a target node by changing its velocity
-//-(void) accelerateTarget:(CCNode*)target
-//{
-//    // Temporary variables
-//    _playerMaxVelocity = 350.0;
-//    _playerNudgeRightVelocity = 30.0;
-//    _playerNudgeUpVelocity = 80.0;
-//    CCPhysicsBody* physicsBody = target.physicsBody;
-//    
-//    // Any already inherent "leftward" movement in a negative x axis direction is canceled
-//    if (physicsBody.velocity.x < 0.0)
-//    {
-//        physicsBody.velocity = CGPointMake(0.0, physicsBody.velocity.y);
-//    }
-//    // Updates the body’s velocity by multiplying the impulse with the inverse of the body’s mass
-//    [physicsBody applyImpulse:CGPointMake(_playerNudgeRightVelocity, _playerNudgeUpVelocity)];
-//    // Checks whether the physicsBody.velocity has exceeded a safe value
-//    if (ccpLength(physicsBody.velocity) > _playerMaxVelocity)
-//    {
-//        CGPoint direction = ccpNormalize(physicsBody.velocity);
-//        physicsBody.velocity = ccpMult(direction, _playerMaxVelocity);
-//    }
-//}
 
 
 -(void) scrollToTarget:(CCNode*)target

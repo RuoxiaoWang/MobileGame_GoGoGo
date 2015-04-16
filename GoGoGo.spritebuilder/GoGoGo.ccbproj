@@ -89,13 +89,13 @@
 		</dict>
 		<key>BackGroundAssets/mainpage.png</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>scaleFrom</key>
 			<integer>2</integer>
 		</dict>
 		<key>GoGoGoAssets</key>
 		<dict>
+			<key>isDirty</key>
+			<true/>
 			<key>isSmartSpriteSheet</key>
 			<true/>
 			<key>previewFolderHidden</key>
