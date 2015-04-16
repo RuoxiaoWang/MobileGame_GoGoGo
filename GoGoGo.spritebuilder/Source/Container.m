@@ -19,7 +19,7 @@
     CCLabelTTF *_scoreLabel;
     BOOL _jumped;
     
-    int score;
+    int _score;
     
 }
 
@@ -29,6 +29,9 @@
     self.userInteractionEnabled = YES;
     // load the current level
     [self loadGame];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:(@selector(countScore)) userInfo:nil repeats:YES];
+    _scoreLabel.visible = YES;
+    
 }
 
 // Assigning physics, background, and player node in loadLevelNamed
@@ -39,6 +42,14 @@
     // get the current level's player in the scene by searching for it recursively
     _backgroundNode = [_levelNode getChildByName:@"background" recursively:NO];
     _playerNode = [_physicsNode getChildByName:@"player" recursively:YES];
+}
+
+-(void) countScore
+{
+    _score++;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
+    _scoreLabel.visible = YES;
+
 }
 
 // Move the player to the touch location
