@@ -74,12 +74,12 @@
     }
     
     // generate initial low level stars
-    for(int i=100;i<=800;i=i+100){
+    for(int i=100;i<=700;i=i+100){
         [self launchLowStar:i];
     }
     
     // generate initial high level stars
-    for(int i=900;i<=1080;i=i+100){
+    for(int i=800;i<=1080;i=i+100){
         [self launchHighStar:i];
     }
 }
@@ -112,7 +112,7 @@
     // if touch position<300, jump to left
     if(pos1.x<300){
         // if location<=800
-        if(pos2.y<=800){
+        if(pos2.y<=700){
             if (!_jumped) {
                 [_playerNode.physicsBody applyImpulse:ccp(-800,3500)];
                 _jumped = TRUE;
@@ -125,7 +125,7 @@
     // if touch position>300, jump to right
     }else{
         // if location<=800
-        if(pos2.y<=800){
+        if(pos2.y<=700){
             if (!_jumped) {
                 [_playerNode.physicsBody applyImpulse:ccp(800,3500)];
                 _jumped = TRUE;
@@ -177,7 +177,7 @@
     [alien2s addObject:alien2];
     
     // set the alien2 location(1920 1080)
-    alien2.position = ccp(arc4random_uniform(200), 200 - arc4random_uniform(100));
+    alien2.position = ccp(arc4random_uniform(1920), 1080 - arc4random_uniform(700));
     // add alien2 to physicsNode
     [_physicsNode addChild:alien2];
 }
@@ -250,7 +250,7 @@
     
     // launch low level star every 12 seconds
     if(_operateLowStar > 10.0f){
-        for(int i=100;i<=800;i=i+100){
+        for(int i=100;i<=700;i=i+100){
             [self launchLowStar:i];
         }
         _operateLowStar = 0.0f;
@@ -263,7 +263,7 @@
     
     // launch high level star every 8 seconds
     if(_operateHighStar > 5.0f){
-        for(int i=900;i<=1080;i=i+100){
+        for(int i=800;i<=1080;i=i+100){
             [self launchHighStar:i];
         }
         _operateHighStar = 0.0f;
@@ -361,7 +361,7 @@
                          star:(CCNode *)star
                            rightBar:(CCNode *)rightBar
 {
-    if(star.position.y<=800){
+    if(star.position.y<=700){
         [lowStars removeObject:star];
         [star removeFromParent];
         
