@@ -117,15 +117,8 @@
     }
     // Update scroll node position to player node, with offset to center player in the view
     
-//    [self scrollToTarget:_playerNode];
-//    
-//    if(_deleteAlien1 > 4.0f){
-//        
-//        [self deleteAlien1];
-//        
-//        _deleteAlien1 = 0.0f;
-//    
-//    }
+    [self scrollToTarget:_playerNode];
+
     
 }
 
@@ -152,5 +145,16 @@
     
 }
 
+
+-(BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair
+                         player:(CCNode *)player
+                           alien1:(CCNode *)alien1
+{
+    _score += 100;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
+    _scoreLabel.visible = YES;
+    [alien1 removeFromParent];
+    return NO;
+}
 
 @end
