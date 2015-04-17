@@ -148,8 +148,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -280,6 +278,14 @@
 							<string></string>
 							<string>GoGoGoAssets/button_start.png</string>
 						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>backgroundOpacity|Normal</string>
+						<key>type</key>
+						<string>Float</string>
+						<key>value</key>
+						<real>0.80000001192092896</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -476,6 +482,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

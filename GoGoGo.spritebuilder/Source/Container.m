@@ -8,6 +8,9 @@
 
 #import "Container.h"
 #import "Alien1.h"
+#import "Alien2.h"
+#import "Star.h"
+#import "GameOver.h"
 
 @implementation Container
 
@@ -18,6 +21,7 @@
     CCNode* _playerNode;
     CCNode* _backgroundNode;
     CCLabelTTF *_scoreLabel;
+    NSTimer *_myTime;
     
     int _score; // Store the score
     
@@ -43,7 +47,7 @@
     _operateAlien1 = 0.0;
     
     _scoreLabel.visible = YES;
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:(@selector(countScore)) userInfo:nil repeats:YES];
+    _myTime = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:(@selector(countScore)) userInfo:nil repeats:YES];
     
     alien1s = [[NSMutableArray alloc] init];
     alien2s = [[NSMutableArray alloc] init];
@@ -264,17 +268,36 @@
                          player:(CCNode *)player
                          star:(CCNode *)star
 {
+    // Pause the game
+    self.paused = YES;
+    // pause and clear the score
+    [_myTime invalidate];
+    _myTime = nil;
     // When touching the star, game over
-    // Set the score to the scoreLabel
-    _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
-    _scoreLabel.visible = YES;
-    // Remove the star touched
-    [stars removeObject:star];
-    // Remove the star from the array alien1s
-    [star removeFromParent];
-    // Add an alien1 to the screen
-    [self launchStar];
+    GameOver *gameover = (GameOver *)[CCBReader load:@"GameOver" owner:self];
+    gameover.positionType = CCPositionTypeNormalized;
+    gameover.position = ccp(0.5,0.5);
+    [self addChild:gameover];
+    
     return NO;
 }
 
+// Set the loadMainScene method
+-(void)loadMainScene
+{
+
+    CCScene *mainScene = [CCBReader loadAsScene:@"MainScene"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    [[CCDirector sharedDirector] presentScene:mainScene withTransition:transition];
+    
+}
+
+// Set the restart method
+-(void)restart
+{
+
+    CCScene *container = [CCBReader loadAsScene:@"Container"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    [[CCDirector sharedDirector] presentScene:container withTransition:transition];
+}
 @end
