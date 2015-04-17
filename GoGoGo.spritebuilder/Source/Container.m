@@ -330,6 +330,25 @@
     return NO;
 }
 
+// Set the method when star collide with the right bar
+-(BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair
+                         star:(CCNode *)star
+                           rightBar:(CCNode *)rightBar
+{
+    if(star.position.y<=800){
+        [lowStars removeObject:star];
+        [star removeFromParent];
+        
+    }else{
+        [highStars removeObject:star];
+        [star removeFromParent];
+    }
+    
+    return NO;
+}
+
+
+
 // Set the loadMainScene method
 -(void)loadMainScene
 {
