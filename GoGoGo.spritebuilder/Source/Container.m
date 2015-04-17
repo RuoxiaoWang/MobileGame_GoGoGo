@@ -34,17 +34,23 @@
     self.userInteractionEnabled = YES;
     // load the current level
     [self loadGame];
+
     // generate Alien1
-    //[self generateAlien1];
     
     _lanchAlien1 = 0.0;
     _index = 0;
+
     
     
     _scoreLabel.visible = YES;
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:(@selector(countScore)) userInfo:nil repeats:YES];
     
     alien1s = [[NSMutableArray alloc] init];
+    
+    // generate 10 Aliens
+    for (int i=0; i<10; i++) {
+        [self launchAlien1];
+    }
     
 }
 
@@ -104,20 +110,22 @@
     if(_lanchAlien1 > 2.0f){
         //load the Alien1
         [self launchAlien1];
+        [self deleteAlien1];
         
         _lanchAlien1 = 0.0f;
+        
     }
     // Update scroll node position to player node, with offset to center player in the view
     
-    [self scrollToTarget:_playerNode];
-    
-    if(_deleteAlien1 > 4.0f){
-        
-        [self deleteAlien1];
-        
-        _deleteAlien1 = 0.0f;
-    
-    }
+//    [self scrollToTarget:_playerNode];
+//    
+//    if(_deleteAlien1 > 4.0f){
+//        
+//        [self deleteAlien1];
+//        
+//        _deleteAlien1 = 0.0f;
+//    
+//    }
     
 }
 
