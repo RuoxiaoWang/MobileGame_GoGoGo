@@ -106,16 +106,21 @@
 // Move the player to the touch location
 -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-        CGPoint pos1 = [touch locationInNode:self];
-        if(pos1.x<300){
-
-            [_playerNode.physicsBody applyImpulse:ccp(-3000,3000)];
-
-        
+    CGPoint pos1 = [touch locationInNode:self];
+    CGPoint pos2 = [touch locationInNode:_levelNode];
+    if(pos1.x<300){
+        if(pos2.y<=800){
+            
         }else{
-            [_playerNode.physicsBody applyImpulse:ccp(3000,3000)];
-        
+            [_playerNode.physicsBody applyImpulse:ccp(-800,3500)];
         }
+    }else{
+        if(pos2.y>800){
+            
+        }else{
+            [_playerNode.physicsBody applyImpulse:ccp(800,3500)];
+        }
+    }
 }
 
 
