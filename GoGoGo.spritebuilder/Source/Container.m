@@ -108,21 +108,42 @@
 {
     CGPoint pos1 = [touch locationInNode:self];
     CGPoint pos2 = [touch locationInNode:_levelNode];
+    
+    // if touch position<300, jump to left
     if(pos1.x<300){
+        // if location<=800
         if(pos2.y<=800){
-            
+            if (!_jumped) {
+                [_playerNode.physicsBody applyImpulse:ccp(-800,3500)];
+                _jumped = TRUE;
+                [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.0f];
+            }
+        // if location>800
         }else{
             [_playerNode.physicsBody applyImpulse:ccp(-800,3500)];
         }
+    // if touch position>300, jump to right
     }else{
-        if(pos2.y>800){
-            
+        // if location<=800
+        if(pos2.y<=800){
+            if (!_jumped) {
+                [_playerNode.physicsBody applyImpulse:ccp(800,3500)];
+                _jumped = TRUE;
+                [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.0f];
+            }
+        // if location>800
         }else{
             [_playerNode.physicsBody applyImpulse:ccp(800,3500)];
         }
     }
 }
 
+// Reset jump
+-(void)resetJump
+{
+    _jumped = FALSE;
+
+}
 
 // Launch Alien1
 -(void)launchAlien1
@@ -228,7 +249,7 @@
     }
     
     // launch low level star every 12 seconds
-    if(_operateLowStar > 12.0f){
+    if(_operateLowStar > 10.0f){
         for(int i=100;i<=800;i=i+100){
             [self launchLowStar:i];
         }
@@ -241,7 +262,7 @@
     }
     
     // launch high level star every 8 seconds
-    if(_operateHighStar > 8.0f){
+    if(_operateHighStar > 5.0f){
         for(int i=900;i<=1080;i=i+100){
             [self launchHighStar:i];
         }
