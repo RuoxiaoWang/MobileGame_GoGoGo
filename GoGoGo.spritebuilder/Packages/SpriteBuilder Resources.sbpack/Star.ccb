@@ -56,9 +56,13 @@
 			<key>bodyShape</key>
 			<integer>0</integer>
 			<key>collisionCategories</key>
-			<array/>
+			<array>
+				<string>star</string>
+			</array>
 			<key>collisionMask</key>
-			<array/>
+			<array>
+				<string>star</string>
+			</array>
 			<key>collisionType</key>
 			<string>star</string>
 			<key>cornerRadius</key>
@@ -74,40 +78,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>3.9475216865539551</real>
-					<real>3.7603986263275146</real>
+					<real>6.0058774948120117</real>
+					<real>4.6396217346191406</real>
 				</array>
 				<array>
-					<real>3.911635160446167</real>
-					<real>13.334444999694824</real>
+					<real>4.749845027923584</real>
+					<real>10.509652137756348</real>
 				</array>
 				<array>
-					<real>12.919184684753418</real>
-					<real>12.878171920776367</real>
+					<real>11.047952651977539</real>
+					<real>10.765985488891602</real>
 				</array>
 				<array>
-					<real>13.347261428833008</real>
-					<real>4.1064481735229492</real>
+					<real>11.678531646728516</real>
+					<real>4.6396217346191406</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>13.347261428833008</real>
-						<real>4.1064481735229492</real>
+						<real>11.678531646728516</real>
+						<real>4.6396217346191406</real>
 					</array>
 					<array>
-						<real>12.919184684753418</real>
-						<real>12.878171920776367</real>
+						<real>11.047952651977539</real>
+						<real>10.765985488891602</real>
 					</array>
 					<array>
-						<real>3.911635160446167</real>
-						<real>13.334444999694824</real>
+						<real>4.749845027923584</real>
+						<real>10.509652137756348</real>
 					</array>
 					<array>
-						<real>3.9475216865539551</real>
-						<real>3.7603986263275146</real>
+						<real>6.0058774948120117</real>
+						<real>4.6396217346191406</real>
 					</array>
 				</array>
 			</array>

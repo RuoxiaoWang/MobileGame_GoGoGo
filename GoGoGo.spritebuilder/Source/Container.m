@@ -22,21 +22,28 @@
     CCNode* _backgroundNode;
     CCLabelTTF *_scoreLabel;
     NSTimer *_myTime;
+    BOOL *_jumped;
     
     int _score; // Store the score
+    double _speed1; // High level star speed
+    double _speed2; // Low level star speed
     
     double _operateAlien1; // Count the time to launch and delete an Alien1
     double _operateAlien2; // Count the time to launch and delete an Alien2
-    double _operateStar; // Count the time to launch and delete an Star
+    double _operateLowStar; // Count the time to launch and delete an low level Star
+    double _operateHighStar; // Count the time to launch and delete an high level Star
     
     NSMutableArray *alien1s; // Store all alien1
     NSMutableArray *alien2s; // Store all alien2
-    NSMutableArray *stars; // Store all star
+    NSMutableArray *lowStars; // Store all low level stars
+    NSMutableArray *highStars; // Store all low level stars
     
 }
 
 -(void) didLoadFromCCB
 {
+    _speed1 = 80.0f;
+    _speed2 = 40.0f;
     // enable receiving input events
     self.userInteractionEnabled = YES;
     // load the current level
@@ -45,13 +52,16 @@
     // generate Alien1
     
     _operateAlien1 = 0.0;
+    _operateAlien2 = 0.0;
+    _operateLowStar = 0.0;
     
     _scoreLabel.visible = YES;
     _myTime = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:(@selector(countScore)) userInfo:nil repeats:YES];
     
     alien1s = [[NSMutableArray alloc] init];
     alien2s = [[NSMutableArray alloc] init];
-    stars = [[NSMutableArray alloc] init];
+    lowStars = [[NSMutableArray alloc] init];
+    highStars = [[NSMutableArray alloc] init];
     
     // generate 10 Alien1
     for (int i=0; i<10; i++) {
@@ -63,9 +73,14 @@
         [self launchAlien2];
     }
     
-    // generate 20 stars
-    for (int i=0; i<20; i++) {
-        [self launchStar];
+    // generate initial low level stars
+    for(int i=100;i<=800;i=i+100){
+        [self launchLowStar:i];
+    }
+    
+    // generate initial high level stars
+    for(int i=900;i<=1080;i=i+100){
+        [self launchHighStar:i];
     }
 }
 
@@ -91,13 +106,16 @@
 // Move the player to the touch location
 -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    [_playerNode stopActionByTag:1];
-    CGPoint pos = [touch locationInNode:_levelNode];
-    CCAction* move = [CCActionMoveTo actionWithDuration:1.2 position:pos];
-    move.tag = 1;
-    [_playerNode runAction:move];
-    // Enable the "user is currently touching the screen" mode
-    // _acceleratePlayer = YES;
+        CGPoint pos1 = [touch locationInNode:self];
+        if(pos1.x<300){
+
+            [_playerNode.physicsBody applyImpulse:ccp(-3000,3000)];
+
+        
+        }else{
+            [_playerNode.physicsBody applyImpulse:ccp(3000,3000)];
+        
+        }
 }
 
 
@@ -133,7 +151,7 @@
     [alien2s addObject:alien2];
     
     // set the alien2 location(1920 1080)
-    alien2.position = ccp(arc4random_uniform(1920), 1080 - arc4random_uniform(540));
+    alien2.position = ccp(arc4random_uniform(200), 200 - arc4random_uniform(100));
     // add alien2 to physicsNode
     [_physicsNode addChild:alien2];
 }
@@ -146,30 +164,30 @@
     [alien2s removeObjectAtIndex:0]; // remove it from the array alien2s
 }
 
-// Launch Star
--(void)launchStar
+// Launch Low Level Star
+-(void)launchLowStar: (int) height
 {
 
     // Load the Star.cbb
     CCNode* star = [CCBReader load:@"Star"];
     // Add the star to the array stars
-    [stars addObject:star];
+    [lowStars addObject:star];
     [_physicsNode addChild:star];
     
-    star.position = ccpAdd(ccp(100,5), ccp(100,5));
-    
-    CGPoint launchDirection = ccp(arc4random_uniform(200), arc4random_uniform(200));
-    CGPoint force = ccpMult(launchDirection, 200);
-    [star.physicsBody applyForce:force];
-
+    star.position = ccp(0, height);
 }
 
-// Delete Star
--(void)deleteStar
+// Launch High Level Star
+-(void)launchHighStar: (int) height
 {
-    CCNode *star = [stars objectAtIndex: 0]; // Find the star at index 0
-    [star removeFromParent]; // remove it from Scene
-    [stars removeObjectAtIndex:0]; // remove it from the array alien2s
+    
+    // Load the Star.cbb
+    CCNode* star = [CCBReader load:@"Star"];
+    // Add the star to the array stars
+    [highStars addObject:star];
+    [_physicsNode addChild:star];
+    
+    star.position = ccp(0, height);
 }
 
 // Accelerate the player node as needed
@@ -177,6 +195,8 @@
 {
     _operateAlien1 += delta;
     _operateAlien2 += delta;
+    _operateLowStar += delta;
+    _operateHighStar += delta;
     
     // if _operateAlien1 large than 10 seconds, do the following operations
     if(_operateAlien1 > 1.5f){
@@ -202,6 +222,34 @@
         
     }
     
+    // launch low level star every 12 seconds
+    if(_operateLowStar > 12.0f){
+        for(int i=100;i<=800;i=i+100){
+            [self launchLowStar:i];
+        }
+        _operateLowStar = 0.0f;
+    }
+    // keep stars moving
+    for(int i=0;i<lowStars.count;i++){
+        CCNode *star = [lowStars objectAtIndex: i];
+        star.position = ccp(star.position.x + _speed2*delta, star.position.y);
+    }
+    
+    // launch high level star every 8 seconds
+    if(_operateHighStar > 8.0f){
+        for(int i=900;i<=1080;i=i+100){
+            [self launchHighStar:i];
+        }
+        _operateHighStar = 0.0f;
+    }
+    // keep stars moving
+    for(int i=0;i<highStars.count;i++){
+        CCNode *star = [highStars objectAtIndex: i];
+        star.position = ccp(star.position.x + _speed2*delta, star.position.y);
+    }
+    
+    
+    
     // Update scroll node position to player node, with offset to center player in the view
     [self scrollToTarget:_playerNode];
 
@@ -224,7 +272,7 @@
     
 }
 
-// Set the method when collide with the alien1
+// Set the method when player collide with the alien1
 -(BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair
                          player:(CCNode *)player
                            alien1:(CCNode *)alien1
@@ -243,7 +291,7 @@
     return NO;
 }
 
-// Set the method when collide with the alien2
+// Set the method when player collide with the alien2
 -(BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair
                          player:(CCNode *)player
                          alien2:(CCNode *)alien2
@@ -263,7 +311,7 @@
 }
 
 
-// Set the method when collide with the star
+// Set the method when player collide with the star
 -(BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair
                          player:(CCNode *)player
                          star:(CCNode *)star
