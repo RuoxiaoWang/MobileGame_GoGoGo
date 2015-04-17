@@ -52,7 +52,7 @@
 			<key>affectedByGravity</key>
 			<true/>
 			<key>allowsRotation</key>
-			<false/>
+			<true/>
 			<key>bodyShape</key>
 			<integer>0</integer>
 			<key>collisionCategories</key>
@@ -60,13 +60,13 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string>player</string>
+			<string></string>
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
-			<true/>
+			<false/>
 			<key>elasticity</key>
 			<real>0.30000001192092896</real>
 			<key>friction</key>
@@ -74,40 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>29.79296875</real>
+					<real>2.36328125</real>
 				</array>
 				<array>
-					<real>0.0</real>
-					<real>159</real>
+					<real>0.21484375</real>
+					<real>14.30859375</real>
 				</array>
 				<array>
-					<real>175</real>
-					<real>159</real>
+					<real>167.484375</real>
+					<real>13.8359375</real>
 				</array>
 				<array>
-					<real>175</real>
-					<real>0.0</real>
+					<real>130.2421875</real>
+					<real>0.9296875</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>175</real>
-						<real>0.0</real>
+						<real>130.2421875</real>
+						<real>0.9296875</real>
 					</array>
 					<array>
-						<real>175</real>
-						<real>159</real>
+						<real>167.484375</real>
+						<real>13.8359375</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>159</real>
+						<real>0.21484375</real>
+						<real>14.30859375</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>0.0</real>
+						<real>29.79296875</real>
+						<real>2.36328125</real>
 					</array>
 				</array>
 			</array>
@@ -168,7 +168,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>GoGoGoAssets/Player.png</string>
+					<string>GoGoGoAssets/Cloud-8@4x.png</string>
 				</array>
 			</dict>
 			<dict>

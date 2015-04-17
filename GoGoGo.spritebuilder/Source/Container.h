@@ -8,6 +8,7 @@
 
 #import "CCNode.h"
 
-@interface Container : CCNode
+// Allow the Container class to be used as a receiver of physics collision messages
+@interface Container : CCNode <CCPhysicsCollisionDelegate>
 
 @end

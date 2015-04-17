@@ -7,7 +7,7 @@
 //
 
 #import "Container.h"
-
+#import "Alien1.h"
 @implementation Container
 
 // variable declarations (ivars)
@@ -20,6 +20,11 @@
     BOOL _jumped;
     
     int _score;
+    double _lanchAlien1;
+    double _deleteAlien1;
+    int _index;
+    
+    NSMutableArray *alien1s;
     
 }
 
@@ -29,8 +34,17 @@
     self.userInteractionEnabled = YES;
     // load the current level
     [self loadGame];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:(@selector(countScore)) userInfo:nil repeats:YES];
+    // generate Alien1
+    //[self generateAlien1];
+    
+    _lanchAlien1 = 0.0;
+    _index = 0;
+    
+    
     _scoreLabel.visible = YES;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:(@selector(countScore)) userInfo:nil repeats:YES];
+    
+    alien1s = [[NSMutableArray alloc] init];
     
 }
 
@@ -39,10 +53,26 @@
 {
     
     _physicsNode = (CCPhysicsNode*)[_levelNode getChildByName:@"physics" recursively:NO];
+    _physicsNode.collisionDelegate = self;
     // get the current level's player in the scene by searching for it recursively
     _backgroundNode = [_levelNode getChildByName:@"background" recursively:NO];
     _playerNode = [_physicsNode getChildByName:@"player" recursively:YES];
 }
+
+
+-(void)launchAlien1
+{
+    // Load the Alien1.cbb
+    CCNode* alien1 = [CCBReader load:@"Alien1"];
+    [alien1s addObject:alien1];
+    
+    // 1920 1080
+    alien1.position = ccpAdd(ccp(arc4random_uniform(100), arc4random_uniform(100)),
+                           ccp(arc4random_uniform(100),arc4random_uniform(100)));
+    // add coin to physicsNode
+    [_physicsNode addChild:alien1];
+}
+
 
 -(void) countScore
 {
@@ -68,10 +98,35 @@
 // Accelerate the player node as needed
 -(void) update:(CCTime)delta
 {
+    _lanchAlien1 += delta;
+    _deleteAlien1 += delta;
+    
+    if(_lanchAlien1 > 2.0f){
+        //load the Alien1
+        [self launchAlien1];
+        
+        _lanchAlien1 = 0.0f;
+    }
     // Update scroll node position to player node, with offset to center player in the view
+    
     [self scrollToTarget:_playerNode];
+    
+    if(_deleteAlien1 > 4.0f){
+        
+        [self deleteAlien1];
+        
+        _deleteAlien1 = 0.0f;
+    
+    }
+    
 }
 
+-(void)deleteAlien1
+{
+    CCNode *alien = [alien1s objectAtIndex: _index];
+    _index++;
+    [alien removeFromParent];
+}
 
 -(void) scrollToTarget:(CCNode*)target
 {
