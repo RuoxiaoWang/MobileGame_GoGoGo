@@ -156,7 +156,9 @@
     _score += 100;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
     _scoreLabel.visible = YES;
+    [alien1s removeObject:alien1];
     [alien1 removeFromParent];
+    [self launchAlien1];
     return NO;
 }
 
