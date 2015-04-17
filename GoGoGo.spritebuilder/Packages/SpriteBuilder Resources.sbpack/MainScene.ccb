@@ -148,6 +148,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -181,8 +183,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>121</real>
-							<real>90</real>
+							<real>148</real>
+							<real>150</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -206,8 +208,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.71513932943344116</real>
+							<real>0.8345145583152771</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -230,8 +232,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>40</real>
-							<real>40</real>
+							<real>232</real>
+							<real>92</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -264,7 +266,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Start</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -276,7 +278,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>GoGoGoAssets/button_start.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -287,7 +289,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>GoGoGoAssets/button_start.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -311,7 +313,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>GoGoGoAssets/button_start.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -330,7 +332,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>GoGoGoAssets/button_start.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -474,8 +476,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

@@ -268,12 +268,12 @@
     // Set the score to the scoreLabel
     _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
     _scoreLabel.visible = YES;
-    // Remove the alien2 touched
-    [alien2s removeObject:alien2];
-    // Remove the alien2 from the array alien1s
-    [alien2 removeFromParent];
+    // Remove the star touched
+    [stars removeObject:star];
+    // Remove the star from the array alien1s
+    [star removeFromParent];
     // Add an alien1 to the screen
-    [self launchAlien2];
+    [self launchStar];
     return NO;
 }
 
