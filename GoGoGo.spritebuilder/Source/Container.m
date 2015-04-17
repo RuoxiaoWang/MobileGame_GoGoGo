@@ -8,6 +8,7 @@
 
 #import "Container.h"
 #import "Alien1.h"
+
 @implementation Container
 
 // variable declarations (ivars)
@@ -48,7 +49,7 @@
     alien1s = [[NSMutableArray alloc] init];
     
     // generate 10 Aliens
-    for (int i=0; i<10; i++) {
+    for (int i=0; i<5; i++) {
         [self launchAlien1];
     }
     
@@ -107,10 +108,12 @@
     _lanchAlien1 += delta;
     _deleteAlien1 += delta;
     
-    if(_lanchAlien1 > 2.0f){
-        //load the Alien1
-        [self launchAlien1];
+    if(_lanchAlien1 > 4.0f){
+        
+        // Delete an Alien1
         [self deleteAlien1];
+        // Add an Alien1
+        [self launchAlien1];
         
         _lanchAlien1 = 0.0f;
         
@@ -124,9 +127,9 @@
 
 -(void)deleteAlien1
 {
-    CCNode *alien = [alien1s objectAtIndex: _index];
-    _index++;
-    [alien removeFromParent];
+    CCNode *alien1 = [alien1s objectAtIndex: 0];
+    [alien1 removeFromParent];
+    [alien1s removeObjectAtIndex:0];
 }
 
 -(void) scrollToTarget:(CCNode*)target
