@@ -23,9 +23,11 @@
     
     double _operateAlien1; // Count the time to launch and delete an Alien1
     double _operateAlien2; // Count the time to launch and delete an Alien2
+    double _operateStar; // Count the time to launch and delete an Star
     
     NSMutableArray *alien1s; // Store all alien1
     NSMutableArray *alien2s; // Store all alien2
+    NSMutableArray *stars; // Store all star
     
 }
 
@@ -45,6 +47,7 @@
     
     alien1s = [[NSMutableArray alloc] init];
     alien2s = [[NSMutableArray alloc] init];
+    stars = [[NSMutableArray alloc] init];
     
     // generate 10 Alien1
     for (int i=0; i<10; i++) {
@@ -54,6 +57,11 @@
     // generate 2 Alien2
     for (int i=0; i<2; i++) {
         [self launchAlien2];
+    }
+    
+    // generate 20 stars
+    for (int i=0; i<20; i++) {
+        [self launchStar];
     }
 }
 
@@ -103,6 +111,7 @@
     [_physicsNode addChild:alien1];
 }
 
+// Delete Alien1
 -(void)deleteAlien1
 {
     CCNode *alien1 = [alien1s objectAtIndex: 0]; // Find the alien1 at index 0
@@ -125,11 +134,38 @@
     [_physicsNode addChild:alien2];
 }
 
+// Delete Alien2
 -(void)deleteAlien2
 {
     CCNode *alien2 = [alien2s objectAtIndex: 0]; // Find the alien2 at index 0
     [alien2 removeFromParent]; // remove it from Scene
     [alien2s removeObjectAtIndex:0]; // remove it from the array alien2s
+}
+
+// Launch Star
+-(void)launchStar
+{
+
+    // Load the Star.cbb
+    CCNode* star = [CCBReader load:@"Star"];
+    // Add the star to the array stars
+    [stars addObject:star];
+    [_physicsNode addChild:star];
+    
+    star.position = ccpAdd(ccp(100,5), ccp(100,5));
+    
+    CGPoint launchDirection = ccp(arc4random_uniform(200), arc4random_uniform(200));
+    CGPoint force = ccpMult(launchDirection, 200);
+    [star.physicsBody applyForce:force];
+
+}
+
+// Delete Star
+-(void)deleteStar
+{
+    CCNode *star = [stars objectAtIndex: 0]; // Find the star at index 0
+    [star removeFromParent]; // remove it from Scene
+    [stars removeObjectAtIndex:0]; // remove it from the array alien2s
 }
 
 // Accelerate the player node as needed
@@ -221,4 +257,24 @@
     [self launchAlien2];
     return NO;
 }
+
+
+// Set the method when collide with the star
+-(BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair
+                         player:(CCNode *)player
+                         star:(CCNode *)star
+{
+    // When touching the star, game over
+    // Set the score to the scoreLabel
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", _score];
+    _scoreLabel.visible = YES;
+    // Remove the alien2 touched
+    [alien2s removeObject:alien2];
+    // Remove the alien2 from the array alien1s
+    [alien2 removeFromParent];
+    // Add an alien1 to the screen
+    [self launchAlien2];
+    return NO;
+}
+
 @end
