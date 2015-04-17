@@ -98,8 +98,7 @@
     [alien1s addObject:alien1];
     
     // set the alien1 location(1920 1080)
-    alien1.position = ccpAdd(ccp(arc4random_uniform(100), arc4random_uniform(100)),
-                           ccp(arc4random_uniform(100),arc4random_uniform(100)));
+    alien1.position = ccp(arc4random_uniform(100), arc4random_uniform(100));
     // add alien1 to physicsNode
     [_physicsNode addChild:alien1];
 }
@@ -121,8 +120,7 @@
     [alien2s addObject:alien2];
     
     // set the alien2 location(1920 1080)
-    alien2.position = ccpAdd(ccp(arc4random_uniform(100), arc4random_uniform(100)),
-                             ccp(arc4random_uniform(100),arc4random_uniform(100)));
+    alien2.position = ccp(arc4random_uniform(100), arc4random_uniform(100));
     // add alien2 to physicsNode
     [_physicsNode addChild:alien2];
 }

@@ -10,6 +10,7 @@
 		3D6F489C1AE04BC000C993BA /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F489B1AE04BC000C993BA /* Container.m */; };
 		3D6F48B31AE06C0200C993BA /* Alien1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48B21AE06C0200C993BA /* Alien1.m */; };
 		3D6F48BE1AE0DF3500C993BA /* Alien2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48BD1AE0DF3500C993BA /* Alien2.m */; };
+		3D6F48C11AE0EB3800C993BA /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48C01AE0EB3800C993BA /* Star.m */; };
 		5B121030197484FA004C1E1D /* GoGoGoActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* GoGoGoActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
@@ -158,6 +159,8 @@
 		3D6F48B21AE06C0200C993BA /* Alien1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alien1.m; path = Source/Alien1.m; sourceTree = "<group>"; };
 		3D6F48BC1AE0DF3500C993BA /* Alien2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alien2.h; path = Source/Alien2.h; sourceTree = "<group>"; };
 		3D6F48BD1AE0DF3500C993BA /* Alien2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alien2.m; path = Source/Alien2.m; sourceTree = "<group>"; };
+		3D6F48BF1AE0EB3800C993BA /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Star.h; path = Source/Star.h; sourceTree = "<group>"; };
+		3D6F48C01AE0EB3800C993BA /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Star.m; path = Source/Star.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -449,6 +452,8 @@
 				B7378992180767190076A88C /* MainScene.h */,
 				3D6F489A1AE04BC000C993BA /* Container.h */,
 				3D6F489B1AE04BC000C993BA /* Container.m */,
+				3D6F48BF1AE0EB3800C993BA /* Star.h */,
+				3D6F48C01AE0EB3800C993BA /* Star.m */,
 				3D6F48BC1AE0DF3500C993BA /* Alien2.h */,
 				3D6F48BD1AE0DF3500C993BA /* Alien2.m */,
 				B7378993180767190076A88C /* MainScene.m */,
@@ -832,6 +837,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6F489C1AE04BC000C993BA /* Container.m in Sources */,
+				3D6F48C11AE0EB3800C993BA /* Star.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				3D6F48BE1AE0DF3500C993BA /* Alien2.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
