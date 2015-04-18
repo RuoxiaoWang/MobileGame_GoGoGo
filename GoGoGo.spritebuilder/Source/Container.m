@@ -42,7 +42,7 @@
 
 -(void) didLoadFromCCB
 {
-    _speed1 = 80.0f;
+    _speed1 = 180.0f;
     _speed2 = 40.0f;
     // enable receiving input events
     self.userInteractionEnabled = YES;
@@ -64,12 +64,12 @@
     highStars = [[NSMutableArray alloc] init];
     
     // generate 10 Alien1
-    for (int i=0; i<10; i++) {
+    for (int i=0; i<20; i++) {
         [self launchAlien1];
     }
     
     // generate 2 Alien2
-    for (int i=0; i<2; i++) {
+    for (int i=0; i<10; i++) {
         [self launchAlien2];
     }
     
@@ -177,7 +177,7 @@
     [alien2s addObject:alien2];
     
     // set the alien2 location(1920 1080)
-    alien2.position = ccp(arc4random_uniform(1920), 1080 - arc4random_uniform(700));
+    alien2.position = ccp(arc4random_uniform(1920), 1080 - arc4random_uniform(380));
     // add alien2 to physicsNode
     [_physicsNode addChild:alien2];
 }
@@ -293,7 +293,6 @@
     CGSize screenSize = _levelNode.contentSizeInPoints;
     viewPos.x = MAX(0.0, MIN(viewPos.x, screenSize.width - viewSize.width));
     viewPos.y = MAX(0.0, MIN(viewPos.y, screenSize.height - viewSize.height));
-    // We should get the reference to the _physicsNode first because it’s being used to search for the player
     _levelNode.positionInPoints = ccpNeg(viewPos);
     
 }
