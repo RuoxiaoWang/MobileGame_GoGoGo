@@ -11,6 +11,7 @@
 #import "Alien2.h"
 #import "Star.h"
 #import "GameOver.h"
+#import "OALSimpleAudio.h"
 
 @implementation Container
 
@@ -42,12 +43,6 @@
 
 -(void) didLoadFromCCB
 {
-
-    // access audio object
-    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
-    // play sound effect in a loop
-    [audio playBg:@"file:///Users/longma/Library/Developer/CoreSimulator/Devices/EA290C63-03DA-410A-B92F-4F45C96BEB7F/data/Containers/Bundle/Application/3622F606-0ED3-4F72-AB57-AD99FE7EA8D2/GoGoGo.app/background.mp3" loop:YES];
-    
     _speed1 = 180.0f;
     _speed2 = 40.0f;
     // enable receiving input events
@@ -88,6 +83,10 @@
     for(int i=800;i<=1080;i=i+100){
         [self launchHighStar:i];
     }
+    
+    // Set background audio
+    OALSimpleAudio* audio = [OALSimpleAudio sharedInstance];
+    [audio playBg:@"background.mp3" loop:YES];
 }
 
 // Assigning physics, background, and player node in loadLevelNamed

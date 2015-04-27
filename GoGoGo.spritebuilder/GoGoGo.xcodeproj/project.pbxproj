@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D2CB9F81AEECD71002579C5 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F489B1AE04BC000C993BA /* Container.m */; };
-		3D2CBA051AEED58A002579C5 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D2CBA041AEED58A002579C5 /* background.mp3 */; };
-		3D2CBA081AEED88B002579C5 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D2CBA071AEED88B002579C5 /* background.mp3 */; };
+		3D2CBA111AEEE79E002579C5 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D2CBA0F1AEEE79E002579C5 /* background.mp3 */; };
 		3D6F48B31AE06C0200C993BA /* Alien1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48B21AE06C0200C993BA /* Alien1.m */; };
 		3D6F48BE1AE0DF3500C993BA /* Alien2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48BD1AE0DF3500C993BA /* Alien2.m */; };
 		3D6F48C11AE0EB3800C993BA /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48C01AE0EB3800C993BA /* Star.m */; };
@@ -157,7 +156,7 @@
 
 /* Begin PBXFileReference section */
 		3D2CBA041AEED58A002579C5 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = Audio/background.mp3; sourceTree = "<group>"; };
-		3D2CBA071AEED88B002579C5 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
+		3D2CBA0F1AEEE79E002579C5 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		3D6F489A1AE04BC000C993BA /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Container.h; path = Source/Container.h; sourceTree = "<group>"; };
 		3D6F489B1AE04BC000C993BA /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Container.m; path = Source/Container.m; sourceTree = "<group>"; };
 		3D6F48B11AE06C0200C993BA /* Alien1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alien1.h; path = Source/Alien1.h; sourceTree = "<group>"; };
@@ -295,17 +294,9 @@
 		3D2CBA011AEED572002579C5 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				3D2CBA0F1AEEE79E002579C5 /* background.mp3 */,
 			);
 			path = Audio;
-			sourceTree = "<group>";
-		};
-		3D2CBA061AEED88B002579C5 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				3D2CBA071AEED88B002579C5 /* background.mp3 */,
-			);
-			name = Audio;
-			path = Source/Resources/Audio;
 			sourceTree = "<group>";
 		};
 		5B12100D197483EE004C1E1D /* res */ = {
@@ -483,7 +474,6 @@
 				3D6F48BC1AE0DF3500C993BA /* Alien2.h */,
 				3D6F48BD1AE0DF3500C993BA /* Alien2.m */,
 				B7378993180767190076A88C /* MainScene.m */,
-				3D2CBA061AEED88B002579C5 /* Audio */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 				3D6F48B11AE06C0200C993BA /* Alien1.h */,
 				3D6F48B21AE06C0200C993BA /* Alien1.m */,
@@ -787,8 +777,7 @@
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
-				3D2CBA081AEED88B002579C5 /* background.mp3 in Resources */,
-				3D2CBA051AEED58A002579C5 /* background.mp3 in Resources */,
+				3D2CBA111AEEE79E002579C5 /* background.mp3 in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
