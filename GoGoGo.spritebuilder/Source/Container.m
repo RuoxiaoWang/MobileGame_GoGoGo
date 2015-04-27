@@ -330,6 +330,16 @@
                          player:(CCNode *)player
                          alien2:(CCNode *)alien2
 {
+    // load particle effect
+    CCParticleSystem *explosion2 = (CCParticleSystem *)[CCBReader load:@"Alien2Explosion"];
+    // make the particle effect clean itself up, once it is completed
+    explosion2.autoRemoveOnFinish = TRUE;
+    // place the particle effect on the seals position
+    explosion2.position = alien2.position;
+    // add the particle effect to the same node the seal is on
+    [alien2.parent addChild:explosion2];
+    
+    
     // When touching the alien2, add 100 to the score
     _score += 500;
     // Set the score to the scoreLabel

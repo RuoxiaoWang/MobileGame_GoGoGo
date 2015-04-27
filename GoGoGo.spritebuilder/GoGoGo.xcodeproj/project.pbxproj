@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D6F489C1AE04BC000C993BA /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F489B1AE04BC000C993BA /* Container.m */; };
+		3D2CB9F81AEECD71002579C5 /* Container.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F489B1AE04BC000C993BA /* Container.m */; };
 		3D6F48B31AE06C0200C993BA /* Alien1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48B21AE06C0200C993BA /* Alien1.m */; };
 		3D6F48BE1AE0DF3500C993BA /* Alien2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48BD1AE0DF3500C993BA /* Alien2.m */; };
 		3D6F48C11AE0EB3800C993BA /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48C01AE0EB3800C993BA /* Star.m */; };
@@ -841,8 +841,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D6F489C1AE04BC000C993BA /* Container.m in Sources */,
 				3D6F48C11AE0EB3800C993BA /* Star.m in Sources */,
+				3D2CB9F81AEECD71002579C5 /* Container.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				3D6F48C41AE0F5E600C993BA /* GameOver.m in Sources */,
 				3D6F48BE1AE0DF3500C993BA /* Alien2.m in Sources */,
