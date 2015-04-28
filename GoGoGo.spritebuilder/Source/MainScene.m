@@ -1,4 +1,5 @@
 #import "MainScene.h"
+#import "Pause.h"
 
 @implementation MainScene
 

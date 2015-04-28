@@ -12,6 +12,7 @@
 #import "Star.h"
 #import "GameOver.h"
 #import "OALSimpleAudio.h"
+#import "Pause.h"
 
 @implementation Container
 
@@ -23,6 +24,8 @@
     CCNode* _backgroundNode;
     CCLabelTTF *_scoreLabel;
     NSTimer *_myTime;
+    
+    Pause *pause;
     
     OALSimpleAudio* audio;
     OALSimpleAudio* audio1;
@@ -483,4 +486,27 @@
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     [[CCDirector sharedDirector] presentScene:container withTransition:transition];
 }
+
+
+-(void)loadPause
+{
+    // Pause the game
+    self.paused = YES;
+    
+    [_myTime invalidate];
+    // When enter the pause button, pause
+    pause = (Pause *)[CCBReader load:@"Pause" owner:self];
+    pause.positionType = CCPositionTypeNormalized;
+    pause.position = ccp(0.5,0.5);
+    [self addChild:pause];
+}
+
+// Set the resume method
+-(void)resume
+{
+    _myTime = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:(@selector(countScore)) userInfo:nil repeats:YES];
+    [self removeChild:pause];
+    self.paused = NO;
+}
+
 @end
