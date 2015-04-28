@@ -182,7 +182,7 @@
             }
         // if location>700
         }else{
-            [_playerNode.physicsBody applyImpulse:ccp(-800,3200)];
+            [_playerNode.physicsBody applyImpulse:ccp(-400,2500)];
         }
     // if touch position>300, jump to right
     }else{
@@ -195,7 +195,7 @@
             }
         // if location>700
         }else{
-            [_playerNode.physicsBody applyImpulse:ccp(800,3200)];
+            [_playerNode.physicsBody applyImpulse:ccp(400,2500)];
         }
     }
 }
