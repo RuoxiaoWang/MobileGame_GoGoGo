@@ -4,7 +4,12 @@
 
 - (void)didLoadFromCCB{
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
-    [audio preloadBg:@"background.mp3"];
+    [audio preloadBg:@"background1.mp3"];
+    
+    // Set main background audio
+    OALSimpleAudio* audio1 = [OALSimpleAudio sharedInstance];
+    audio1.effectsVolume = 0.5;
+    [audio1 playBg:@"mainground.mp3" loop:YES];
 }
 
 - (void)startGame {

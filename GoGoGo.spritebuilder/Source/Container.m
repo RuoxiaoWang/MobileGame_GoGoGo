@@ -86,7 +86,7 @@
     
     // Set background audio
     OALSimpleAudio* audio = [OALSimpleAudio sharedInstance];
-    [audio playBg:@"background.mp3" loop:YES];
+    [audio playBg:@"background1.mp3" loop:YES];
 }
 
 // Assigning physics, background, and player node in loadLevelNamed
