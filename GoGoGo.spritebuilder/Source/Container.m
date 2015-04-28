@@ -116,29 +116,29 @@
     
     // if touch position<300, jump to left
     if(pos1.x<300){
-        // if location<=800
+        // if location<=700
         if(pos2.y<=700){
             if (!_jumped) {
-                [_playerNode.physicsBody applyImpulse:ccp(-800,3500)];
+                [_playerNode.physicsBody applyImpulse:ccp(-800,3200)];
                 _jumped = TRUE;
-                [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.0f];
+                [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.6f];
             }
-        // if location>800
+        // if location>700
         }else{
-            [_playerNode.physicsBody applyImpulse:ccp(-800,3500)];
+            [_playerNode.physicsBody applyImpulse:ccp(-800,3200)];
         }
     // if touch position>300, jump to right
     }else{
-        // if location<=800
+        // if location<=700
         if(pos2.y<=700){
             if (!_jumped) {
-                [_playerNode.physicsBody applyImpulse:ccp(800,3500)];
+                [_playerNode.physicsBody applyImpulse:ccp(800,3200)];
                 _jumped = TRUE;
-                [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.0f];
+                [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.6f];
             }
-        // if location>800
+        // if location>700
         }else{
-            [_playerNode.physicsBody applyImpulse:ccp(800,3500)];
+            [_playerNode.physicsBody applyImpulse:ccp(800,3200)];
         }
     }
 }
@@ -254,7 +254,7 @@
     }
     
     // launch low level star every 12 seconds
-    if(_operateLowStar > 10.0f){
+    if(_operateLowStar > 8.0f){
         for(int i=100;i<=700;i=i+100){
             [self launchLowStar:i];
         }
@@ -267,7 +267,7 @@
     }
     
     // launch high level star every 8 seconds
-    if(_operateHighStar > 5.0f){
+    if(_operateHighStar > 4.0f){
         for(int i=800;i<=1080;i=i+100){
             [self launchHighStar:i];
         }
