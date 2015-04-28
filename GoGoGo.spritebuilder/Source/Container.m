@@ -24,6 +24,8 @@
     CCLabelTTF *_scoreLabel;
     NSTimer *_myTime;
     
+    OALSimpleAudio* audio;
+    OALSimpleAudio* audio1;
     
     BOOL *_jumped;
     
@@ -88,7 +90,10 @@
     }
     
     // Set background audio
-    OALSimpleAudio* audio = [OALSimpleAudio sharedInstance];
+    audio1 = [OALSimpleAudio sharedInstance];
+    [audio1 stopBg];
+    
+    audio = [OALSimpleAudio sharedInstance];
     [audio playBg:@"background1.mp3" loop:YES];
 }
 
@@ -425,6 +430,10 @@
 {
     // Pause the game
     self.paused = YES;
+    
+    audio = [OALSimpleAudio sharedInstance];
+    [audio playBg:@"failed.mp3" loop:NO];
+    
     // pause and clear the score
     [_myTime invalidate];
     _myTime = nil;

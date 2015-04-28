@@ -6,6 +6,9 @@
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     [audio preloadBg:@"background1.mp3"];
     
+    OALSimpleAudio *audio2 = [OALSimpleAudio sharedInstance];
+    [audio2 preloadBg:@"failed.mp3"];
+    
     // Set main background audio
     OALSimpleAudio* audio1 = [OALSimpleAudio sharedInstance];
     audio1.effectsVolume = 0.5;
