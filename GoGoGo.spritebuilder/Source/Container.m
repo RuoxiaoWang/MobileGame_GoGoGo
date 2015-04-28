@@ -23,6 +23,8 @@
     CCNode* _backgroundNode;
     CCLabelTTF *_scoreLabel;
     NSTimer *_myTime;
+    
+    
     BOOL *_jumped;
     
     int _score; // Store the score
@@ -43,6 +45,7 @@
 
 -(void) didLoadFromCCB
 {
+    
     _speed1 = 180.0f;
     _speed2 = 40.0f;
     // enable receiving input events
@@ -113,13 +116,67 @@
 {
     CGPoint pos1 = [touch locationInNode:self];
     CGPoint pos2 = [touch locationInNode:_levelNode];
+        
+//    // if touch position<300, jump to left
+//    if(pos1.x<300){
+//        //if location<=700
+//        if(pos2.y<=700){
+//            if(lastTouch-firstTouch<1.0f){
+//                [_playerNode.physicsBody applyImpulse:ccp(-700,2000)];
+//            }else{
+//                if (!_jumped) {
+//                    [_playerNode.physicsBody applyImpulse:ccp(-800,3200)];
+//                    _jumped = TRUE;
+//                    [self performSelector:@selector(resetJump) withObject:nil afterDelay:2.0f];
+//                }
+//            }
+//        // if location>700
+//        }else{
+//            [_playerNode.physicsBody applyImpulse:ccp(-800,3200)];
+//        }
+//    }
+//    // if touch position>300, jump to right
+//    if(pos1.x>=300){
+//        //if location<=700
+//        if(pos2.y<=700){
+//            if(lastTouch-firstTouch<1.0f){
+//                [_playerNode.physicsBody applyImpulse:ccp(700,2000)];
+//            }else{
+//                if (!_jumped) {
+//                    [_playerNode.physicsBody applyImpulse:ccp(800,3200)];
+//                    _jumped = TRUE;
+//                    [self performSelector:@selector(resetJump) withObject:nil afterDelay:2.0f];
+//                }
+//            }
+//            // if location>700
+//        }else{
+//            [_playerNode.physicsBody applyImpulse:ccp(800,3200)];
+//        }
+//    }
+    
+//    if(pos1.x<300){
+//        [_playerNode stopActionByTag:1];
+//        CGPoint pos = CGPointMake(-(2000.0-_playerNode.position.x),_playerNode.position.y);
+//        CCAction* move = [CCActionMoveTo actionWithDuration:18.0 position:pos];
+//        move.tag = 1;
+//        [_playerNode runAction:move];
+//    }
+//    if(pos1.x>=300){
+//        [_playerNode stopActionByTag:1];
+//        CGPoint pos = CGPointMake(_playerNode.position.x+2000.0,_playerNode.position.y);
+//        CCAction* move = [CCActionMoveTo actionWithDuration:18.0 position:pos];
+//        move.tag = 1;
+//        [_playerNode runAction:move];
+//    }
+    
+    
     
     // if touch position<300, jump to left
     if(pos1.x<300){
         // if location<=700
         if(pos2.y<=700){
             if (!_jumped) {
-                [_playerNode.physicsBody applyImpulse:ccp(-800,3200)];
+                [_playerNode.physicsBody applyImpulse:ccp(-800,3400)];
                 _jumped = TRUE;
                 [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.6f];
             }
@@ -132,7 +189,7 @@
         // if location<=700
         if(pos2.y<=700){
             if (!_jumped) {
-                [_playerNode.physicsBody applyImpulse:ccp(800,3200)];
+                [_playerNode.physicsBody applyImpulse:ccp(800,3400)];
                 _jumped = TRUE;
                 [self performSelector:@selector(resetJump) withObject:nil afterDelay:0.6f];
             }
@@ -142,6 +199,7 @@
         }
     }
 }
+
 
 // Reset jump
 -(void)resetJump
