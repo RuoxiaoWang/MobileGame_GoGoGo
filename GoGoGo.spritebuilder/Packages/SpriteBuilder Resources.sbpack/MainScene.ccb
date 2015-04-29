@@ -148,6 +148,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -970,7 +972,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Instruction</string>
+							<string>Start with Instruction</string>
 							<false/>
 						</array>
 					</dict>
@@ -1201,8 +1203,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

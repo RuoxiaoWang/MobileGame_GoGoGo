@@ -4,8 +4,14 @@
 @implementation MainScene
 
 - (void)didLoadFromCCB{
+    
+    
+    
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     [audio preloadBg:@"background1.mp3"];
+    
+    OALSimpleAudio *audio3 = [OALSimpleAudio sharedInstance];
+    [audio3 preloadBg:@"background.mp3"];
     
     OALSimpleAudio *audio2 = [OALSimpleAudio sharedInstance];
     [audio2 preloadBg:@"failed.mp3"];

@@ -29,6 +29,7 @@
     
     OALSimpleAudio* audio;
     OALSimpleAudio* audio1;
+    OALSimpleAudio* audio3;
     
     BOOL *_jumped;
     
@@ -95,6 +96,9 @@
     // Set background audio
     audio1 = [OALSimpleAudio sharedInstance];
     [audio1 stopBg];
+    
+    audio3 = [OALSimpleAudio sharedInstance];
+    [audio3 stopBg];
     
     audio = [OALSimpleAudio sharedInstance];
     [audio playBg:@"background1.mp3" loop:YES];

@@ -8,6 +8,6 @@
 
 #import "CCNode.h"
 
-@interface Instruction : CCNode
+@interface Instruction : CCNode <CCPhysicsCollisionDelegate>
 
 @end
