@@ -23,4 +23,12 @@
     [[CCDirector sharedDirector] presentScene:game withTransition:transition];
 }
 
+-(void)loadInstruction{
+
+    CCScene *instruction = [CCBReader loadAsScene:@"Instruction"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    [[CCDirector sharedDirector] presentScene:instruction withTransition:transition];
+    
+}
+
 @end

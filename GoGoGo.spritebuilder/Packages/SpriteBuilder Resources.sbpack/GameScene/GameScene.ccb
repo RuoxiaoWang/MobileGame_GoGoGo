@@ -140,8 +140,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>28.360431671142578</real>
-									<real>54.876438140869141</real>
+									<real>228.05314636230469</real>
+									<real>50.274784088134766</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -169,6 +169,8 @@
 								<string>Prefabs/Player.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -2773,8 +2775,6 @@
 								<string>Cloud/Cloud2.ccb</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>

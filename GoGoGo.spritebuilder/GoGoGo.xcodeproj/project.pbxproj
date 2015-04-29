@@ -13,6 +13,7 @@
 		3D2CBA181AEF04B6002579C5 /* background1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D2CBA171AEF04B6002579C5 /* background1.mp3 */; };
 		3D2CBA321AF01ED2002579C5 /* failed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D2CBA311AF01ED2002579C5 /* failed.mp3 */; };
 		3D2CBA441AF037CB002579C5 /* Pause.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2CBA431AF037CB002579C5 /* Pause.m */; };
+		3D2CBA4F1AF05E48002579C5 /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2CBA4E1AF05E48002579C5 /* Instruction.m */; };
 		3D6F48B31AE06C0200C993BA /* Alien1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48B21AE06C0200C993BA /* Alien1.m */; };
 		3D6F48BE1AE0DF3500C993BA /* Alien2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48BD1AE0DF3500C993BA /* Alien2.m */; };
 		3D6F48C11AE0EB3800C993BA /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F48C01AE0EB3800C993BA /* Star.m */; };
@@ -166,6 +167,8 @@
 		3D2CBA311AF01ED2002579C5 /* failed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = failed.mp3; path = Source/Resources/Audio/failed.mp3; sourceTree = "<group>"; };
 		3D2CBA421AF037CB002579C5 /* Pause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pause.h; path = Source/Pause.h; sourceTree = "<group>"; };
 		3D2CBA431AF037CB002579C5 /* Pause.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pause.m; path = Source/Pause.m; sourceTree = "<group>"; };
+		3D2CBA4D1AF05E48002579C5 /* Instruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Instruction.h; path = Source/Instruction.h; sourceTree = "<group>"; };
+		3D2CBA4E1AF05E48002579C5 /* Instruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Instruction.m; path = Source/Instruction.m; sourceTree = "<group>"; };
 		3D6F489A1AE04BC000C993BA /* Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Container.h; path = Source/Container.h; sourceTree = "<group>"; };
 		3D6F489B1AE04BC000C993BA /* Container.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Container.m; path = Source/Container.m; sourceTree = "<group>"; };
 		3D6F48B11AE06C0200C993BA /* Alien1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alien1.h; path = Source/Alien1.h; sourceTree = "<group>"; };
@@ -477,6 +480,8 @@
 				3D6F489A1AE04BC000C993BA /* Container.h */,
 				3D6F489B1AE04BC000C993BA /* Container.m */,
 				3D6F48BF1AE0EB3800C993BA /* Star.h */,
+				3D2CBA4D1AF05E48002579C5 /* Instruction.h */,
+				3D2CBA4E1AF05E48002579C5 /* Instruction.m */,
 				3D6F48C21AE0F5E600C993BA /* GameOver.h */,
 				3D2CBA421AF037CB002579C5 /* Pause.h */,
 				3D2CBA431AF037CB002579C5 /* Pause.m */,
@@ -876,6 +881,7 @@
 				3D2CB9F81AEECD71002579C5 /* Container.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				3D6F48C41AE0F5E600C993BA /* GameOver.m in Sources */,
+				3D2CBA4F1AF05E48002579C5 /* Instruction.m in Sources */,
 				3D6F48BE1AE0DF3500C993BA /* Alien2.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				3D2CBA441AF037CB002579C5 /* Pause.m in Sources */,
