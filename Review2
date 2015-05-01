@@ -1,0 +1,6 @@
+Review2
+
+1. finished, the player will jump to the place you tap on the screen, by applying a force on the character.
+2. finished, the camera is now following the character to scroll the screen.
+3. finished, the physical objects in the game play sceen now are all child of physical node now.
+4. not very sure how to adjust the jump style, seems like bullet 1 in this week task.
