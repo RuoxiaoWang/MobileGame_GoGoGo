@@ -1,0 +1,4 @@
+1. Add star in the screen
+2. Let stars appear in the left of the screen
+3. Add alien friend
+4. Make alien friend appear randomly

@@ -1,0 +1,4 @@
+1. Let player jump
+2. Let the camera follow the player
+3. Set physics
+4. Adjust the jump style
