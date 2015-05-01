@@ -1,0 +1,5 @@
+1. Add Pause function
+2. Add Pause Background Audio and Mission Failed Audio
+3. Add instruction when first start the game
+4. Modify jump styles in common area and blue area
+5. Modify the words format to make them more beautiful

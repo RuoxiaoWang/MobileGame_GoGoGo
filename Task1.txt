@@ -1,0 +1,4 @@
+1. Find and add Background and create main menu
+2. Add player and set the feature of it
+3. Add clouds and set the feature of it
+4. Find button assets and add it in the main menu to start game 

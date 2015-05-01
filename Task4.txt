@@ -1,0 +1,4 @@
+1. Add blue area at the top of the background
+2. Add another kind of alien friend —— green alien, and make them appear randomly
+3. Add score counting
+4. Make the cloud layout more reasonable

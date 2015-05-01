@@ -1,0 +1,4 @@
+1. Add background audios
+2. Modify the main screen and add characters in it
+3. Add explosion animation
+4. Add restart function
